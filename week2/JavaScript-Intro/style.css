@@ -1,0 +1,19 @@
+
+#div-top {
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    align-items: center;
+    height: 50vh;
+    width: 100vw;
+    background-color: aquamarine;
+}
+#div-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    align-items: center;
+    height: 50vh;
+    width: 100vw;
+    background-color: rgb(166, 192, 184);
+}
