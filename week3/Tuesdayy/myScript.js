@@ -12,16 +12,16 @@
 
 
 // 1)bir fonksiyon icinde girilen iki input alanindaki value degerlerine ulasan kod yazdik.
-//2) brada önemli olan value degerleri string oldugu icin integer'e cevrilmesi oldu. 
+//2) burada önemli olan value degerleri string oldugu icin integer'e cevrilmesi oldu. 
 //3)fonk. hemen altinda if else if Conditional Statements kodunu yazdim. 
 //4)elde ettigim sonuclari hem yazi ile hem foto ile ekrana yazdirdim. 
 //5)console log ile console de  yazildi//
  
 function sayibulma() {
     let sayi1 = document.getElementById("sayi1").value;
-    let a = parseInt(sayi1);
+    let a = Number(sayi1);
     let sayi2 = document.getElementById("sayi2").value;
-    let b = parseInt(sayi2);
+    let b = Number(sayi2);
     let result = "unknown because you didn't put a valid.";
 
     if (a > b) {
