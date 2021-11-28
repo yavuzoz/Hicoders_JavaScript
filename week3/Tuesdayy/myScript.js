@@ -1,4 +1,3 @@
-
 // ** Küçük Ahmet’in istedigi programa iki sayi girmeniz gerekiyor, program hangi sayinin daha büyük olduğunu buluyor ve ekranda gösteriyor. Sayi girisleri ve sonuc ciktisi browserde görüntülenecek. Ayrica program akisinda meydana gelen degisiklikleri console'da da göstermenizi istiyoruz.
 
 //  Kriterler:
@@ -16,28 +15,33 @@
 //3)fonk. hemen altinda if else if Conditional Statements kodunu yazdim. 
 //4)elde ettigim sonuclari hem yazi ile hem foto ile ekrana yazdirdim. 
 //5)console log ile console de  yazildi//
- 
-function sayibulma() {
-    let sayi1 = document.getElementById("sayi1").value;
-    let a = Number(sayi1);
-    let sayi2 = document.getElementById("sayi2").value;
-    let b = Number(sayi2);
-    let result = "unknown because you didn't put a valid.";
 
-    if (a > b) {
-        result = ("en büyük a");
-        document.getElementById("photo").innerHTML = "<img src='./indir.png'width=20%>";
-        document.getElementById("result").innerHTML = result
-    }else if (b>a) {
-        result = ("en büyük b");
-        document.getElementById("photo").innerHTML = "<img src='./Latin_B.png'width=20%>";
-        document.getElementById("result").innerHTML = result
-    }else if (b==a) {
-        result = ("a = b dir");
-        document.getElementById("photo").innerHTML = "<img src='./indir(1).png'width=20%>";
-        document.getElementById("result").innerHTML = result
-    }
-    console.log(result);
-}
+const calculate = document.querySelector(".button");
+const result = document.querySelector("#result");
+
+calculate.addEventListener("click", function () {
+    /**
+     * + ile de girilen deger integir yapilir veya nummer ile de
+     */
+            let first = +document.getElementById("sayi1").value;
+            let sayi1 =Number(first)
+            let second = +document.getElementById("sayi2").value;
+            let sayi2 =Number(second)
+            let photo = "";
+            let result = "";
 
 
+            if (sayi1 > sayi2) {
+                result = "en büyük a";
+                photo = "<img src='./indir.png'width=20%>";
+            } else if (sayi2 > sayi1) {
+                result = "en büyük b";
+                photo = "<img src='./Latin_B.png'width=20%>";
+            } else if (sayi1 == sayi2) {
+                result = "a = b dir";
+                photo = "<img src='./indir(1).png'width=20%>";
+            }
+            console.log(result);
+            document.getElementById("result").innerHTML = result
+            document.getElementById("photo").innerHTML = photo
+        });
