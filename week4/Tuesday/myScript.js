@@ -13,38 +13,32 @@
 
 //Random wagon numbers from 1 to 10 are generated and stored in this wagon
 
-let guess_count = 0;
-let random_number = Math.floor(Math.random() * 10 + 1);
-console.log(random_number);
-document.querySelector("#check_it").addEventListener("click", checkNumber);
-document.querySelector("#nr_game").addEventListener("keyup", function (event) {
-    if (event.keyCode === 13)
-        checkNumber()
-});
-function checkNumber() {
-    // // This is for input again erreichen
-    let userInputElement = document.querySelector("#nr_game").value;
-    let answerLabelElement = document.querySelector("#answer");
-    let guessLabelElement = document.querySelector("#count_it");
-    if (userInputElement == random_number) {
-        guess_count++;
-        answerLabelElement.innerText = "You are the winner!" + guess_count+1;
-    } else if (userInputElement.value == "") {
-        guess_count++;
-        answerLabelElement.innerText = "Enter a number!";
-    } else if (userInputElement > random_number) {
-        guess_count++;
-        document.querySelector("#count_it").innerText = `Guess count is: ${guess_count}`;
-        answerLabelElement.innerText = "Try a smaller number!";
-    } else if (userInputElement < random_number) {
-        guess_count++;
-        document.querySelector("#count_it").innerText = `Guess count is: ${guess_count}`;
-        answerLabelElement.innerText = "Try a higher number!";
-    } else if (isNaN(userInputElement)) {
-        answerLabelElement.innerText = "It's not a number!";
-    }
-    userInputElement.focus();
-    userInputElement = "";
-    guessLabelElement="";
-}
+const max_tutlan_rakam = 10;
+const max_hak_sayisi = 4;
+//Random wagon numbers from 1 to 10 are generated and stored in this wagon
+const suspiciousWagon = Math.floor((Math.random() * max_tutlan_rakam) + 1);
+console.log(suspiciousWagon);
 
+//the user will have to find the wagon with the problem in max 4 attempts
+//the user will be guided by the expressions in the front wagon or the rear wagon to help him find which wagon he is in
+let numberOfPredictions = 0;
+for (numberOfPredictions = 0; numberOfPredictions < max_hak_sayisi; numberOfPredictions++) {
+    let prediction = +prompt("Tahmininizi giriniz lütfen : ");
+    if (suspiciousWagon === prediction) {
+        console.log("congratulations correct guess..");
+        break;
+    } else if (prediction == "") {
+        console.log("enter a number")
+
+    } else if (prediction > suspiciousWagon) {
+        console.log("see front wagons..")
+    } else if (prediction < suspiciousWagon) {
+        console.log("see back wagons..")
+    }
+}
+//how many times the user knows and his score (out of 100) will be printed on the console
+if (numberOfPredictions < max_hak_sayisi) {
+    console.log(`congratulations you have known ${numberOfPredictions + 1} times. you got ${25 * (max_hak_sayisi - numberOfPredictions)} `)
+} else {
+    console.log("your lost your points 0");
+}
