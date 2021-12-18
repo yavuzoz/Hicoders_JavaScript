@@ -15,14 +15,13 @@
 
 const max_tutlan_rakam = 10;
 const max_hak_sayisi = 4;
-//Random wagon numbers from 1 to 10 are generated and stored in this wagon
+
 const suspiciousWagon = Math.floor((Math.random() * max_tutlan_rakam) + 1);
 console.log(suspiciousWagon);
 
-//the user will have to find the wagon with the problem in max 4 attempts
-//the user will be guided by the expressions in the front wagon or the rear wagon to help him find which wagon he is in
 let numberOfPredictions = 0;
 for (numberOfPredictions = 0; numberOfPredictions < max_hak_sayisi; numberOfPredictions++) {
+
     let prediction = +prompt("Tahmininizi giriniz lütfen : ");
     if (suspiciousWagon === prediction) {
         console.log("congratulations correct guess..");
