@@ -26,36 +26,17 @@ function changeToUpperCase() {
 changeToUpperCase();
 
 //parca isimlerinden sayilar cikartmak icin
-let newYedekParcaArray = [];
+let newYedekParcaArray = yedekParca.map(parca => parca.replace(/[0-9]/g, ""));
+console.log("sayilarin cikarilmis hali : ", newYedekParcaArray);
 
-function deleteNumbersFromArray() {
-    for (let index = 0; index < yedekParca.length; index++) {
-        let element = yedekParca[index];
-        element.split("");
-        let usingArrayFrom = Array.from(element);
-        // console.log(usingArrayFrom);
-        newYedekParcaArray.push(usingArrayFrom);
-    }
-    //newYedekParcaArray[7].slice(0, 1);
-    //newYedekParcaArray[7].slice(7, 1);
-    let sayilar = [0, 1, 2, 3, 4, 5, 6];
-    for (let index = 0; index < sayilar.length; sayilar++) {
-        let sayi = sayilar[index];
-        if (newYedekParcaArray.includes(sayi)) {
-            newYedekParcaArray.shift(sayi)
-        }
-    }
-    console.log("arrayin numaralar silinmis hali" + newYedekParcaArray);
-    return newYedekParcaArray;
-}
-deleteNumbersFromArray();
 
 // reverse;array icindeki elemanlari tersine yazdirmak icin
 function reverseElementsName() {
     let reverseArray = [];
     for (let index = 0; index < newYedekParcaArray.length; index++) {
-        let newElement = newYedekParcaArray[index].reverse();
-        reverseArray.push(newElement);
+        let newElement = Array.from(newYedekParcaArray[index]);
+        reverseArray.push(newElement.reverse());
+        
     }
     console.log("Ters eleman ismi: " + reverseArray);
     return reverseArray;
