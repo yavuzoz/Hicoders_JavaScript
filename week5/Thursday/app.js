@@ -35,7 +35,8 @@ function reverseElementsName() {
     let reverseArray = [];
     for (let index = 0; index < newYedekParcaArray.length; index++) {
         let newElement = Array.from(newYedekParcaArray[index]);
-        reverseArray.push(newElement.reverse());
+        console.log(newElement)
+        reverseArray.push(newElement.reverse().join(""));
         
     }
     console.log("Ters eleman ismi: " + reverseArray);
