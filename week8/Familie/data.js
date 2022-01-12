@@ -90,7 +90,7 @@ const families = [{
     },
 ];
 
-/**Stok miktari 500 kg uzerinde olan baliklarin isimleri */
+/**Maas miktari 500o uzerinde olan babalarin isimleri */
 let over5000FamiliesList = findOver5000SalaryList(families, 5000)
 console.log("maas miktari 5000 uzerinde olan aile isimleri:");
 over5000FamiliesList.map(salaryy => console.log(`aile ismi: ${salaryy.lastname} , maas: ${salaryy.salary}`))
