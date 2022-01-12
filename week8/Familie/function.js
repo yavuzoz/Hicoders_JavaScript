@@ -13,21 +13,8 @@ function findOver5000SalaryList(pFamiliesList, pSalary) {
     let over5000SalaryList = pFamiliesList.filter((salaryy) => salaryy.salary > pSalary);
     return over5000SalaryList;
 }
-/*soru 2: erkek cocuk listesi, selale yöntemi */
 
-const newList = (eleman) => eleman.childrens[0];
-const genderList = (element) => {
-    if (element.gender === "boy")
-        return genderList
-}
 
-function getGenderName(pFamilies) {
-    const totalList =
-        pFamilies
-        .map(newList)
-        .filter(genderList)
-    return totalList
-}
 /*3. soru : kiz cocuklarinin isimleri ve sayisi */
 const newListt = (eleman) => eleman.childrens[0];
 const genderListt = (element) => {
@@ -72,4 +59,3 @@ function getAge8OverChildren(pFamilies) {
         .filter(ageList)
     return totalListe
 }
-

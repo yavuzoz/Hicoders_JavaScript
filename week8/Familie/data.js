@@ -96,29 +96,35 @@ console.log("maas miktari 5000 uzerinde olan aile isimleri:");
 over5000FamiliesList.map(salaryy => console.log(`aile ismi: ${salaryy.lastname} , maas: ${salaryy.salary}`))
 /*----------------soru 2 ------------------------*/
 
-let listBoy = getGenderName(families);
-console.log("toplam erkek cocugu sayisi: " , listBoy.length);
-listBoy.sort((a,b) => a.name.localeCompare(b.name));
-console.log("erkek cocuklari isim sirasina göre ", listBoy)
-/*soru 2  normal cözüm*/
-// const newArrayList = families.map(function (params) {
-//     return params.childrens[0]
+const nameOfChildren = families.map(child => child.childrens).map(family => family).flat();
 
-// });
-// const genderList = newArrayList.filter(function (element) {
-//     if (element.gender === "boy")
-//         return element
+let childAlphabetikSort = nameOfChildren.sort(function(a, b) {
+    return a.name.localeCompare(b.name);
+})
+console.log("burda cocuk isimlerine göre alfabetik siralama yapildi", childAlphabetikSort)
 
-// })
-// console.log("erkek cocuklarin listesi", genderList)
+const nameOfBoys = childAlphabetikSort.filter(child => {
+    if (child.gender === "boy") {
+        return child.name;
+    }
+});
+
+console.log("erkek cocuklarin alfabatik sirallamasi : " , nameOfBoys)
+const numberOfBoys = nameOfBoys.length;
+console.log(`erkek cocuk sayisi ${numberOfBoys}.`);
+
 
 /* soru 3----------*/
-console.log(getGenderNamee(families))
 
-let listGirl = getGenderNamee(families);
-console.log("toplam kiz cocugu sayisi: " , listGirl.length);
-listGirl.sort((a,b) => a.name.localeCompare(b.name));
-console.log("kiz cocuklari isim sirasina göre ", listGirl)
+const nameOfGirls = childAlphabetikSort.filter(child => {
+    if (child.gender === "girls") {
+        return child.name;
+    }
+});
+
+console.log("kiz cocuklarin alfabatik siralamasi : " , nameOfGirls)
+const numberOfGirls = nameOfGirls.length;
+console.log(`kiz cocuk sayisi ${numberOfGirls}.`);
 /*-------------- soru 4 ---------------------------------------*/
 
 let listAge_8_Under = getAge8UnderChildren(families);
@@ -126,10 +132,19 @@ console.log("yasi sekizden kücük olan cocuk  sayisi: " , listAge_8_Under.lengt
 
 /*-------------- soru 5 ---------------------------------------*/
 
-let listAge_8_Over = getAge8OverChildren(families);
-console.log("yasi sekizden buyuk olan cocuk  sayisi: " , listAge_8_Over.length);
+let motherAlphabetikSort = families.sort(function(a, b) {
+    return a.partner.localeCompare(b.partner);
+})
+console.log("burda annelerine göre alfabetik siralama yapildi", motherAlphabetikSort)
+const nChildren = motherAlphabetikSort.map(child => child.childrens).map(family => family).flat();
+const nChildrenn = nChildren.filter(childn => {
+    if(childn.age> 8) {
+        return childn.name
+    }
+})
+console.log("annelerinin ismine göre alfabetik siralama, yasi sekizden büyük olan cocuklar", nChildrenn)
 
 
-/*not: girift yapilara ulasmada sorun yasadim, acikcasi persembe ödevi daha kolaydi benim icin , cünkü duz bir obje icinde; loop ile if ( ve / veya/ kücük/ büyük sartlari ile ) ile sonuca ulasilmasi cok daha kolay, düz bir yapi(array icinde obje). bu hafta ic ice yapilara ulasma üzerinde durulabilirse cok iyi olur benim acimdan */
+
 
  

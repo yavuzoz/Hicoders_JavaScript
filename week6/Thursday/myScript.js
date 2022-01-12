@@ -29,3 +29,12 @@ function getTotalOfSalary(pIncomeStatement) {
     return (SALARY-(totalSalary*(80/100)));
 }
 console.log("Total Salary is ", getTotalOfSalary(incomeStatement),"CHF");
+
+let person = {
+    firstNmae: "ahmet",
+    age: 30
+}
+
+let name = person.firstNmae;
+let agee = person.age;
+console.log(agee)
