@@ -1,0 +1,19 @@
+body {
+    color: #1C5188;
+    background-color: aquamarine;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+a.button {
+    border-radius: 7px;
+    margin-bottom: 70px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding: 6px 22px;
+    text-decoration: none;
+    background-color: antiquewhite;
+    -webkit-transition: box-shadow 1s ease;
+    transition: box-shadow 1s ease;
+}
