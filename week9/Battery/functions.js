@@ -35,7 +35,7 @@ function batteryColor() {
 
 }
 
-function BatteryTextStatus() {
+function batteryTextStatus() {
     if (batteryLevel === 0) {
         batteryText.innerHTML = "Doluluk Orani: %0";
     } else if (batteryLevel === 1) {

@@ -16,7 +16,7 @@ function findOver5000SalaryList(pFamiliesList, pSalary) {
 
 
 /*3. soru : kiz cocuklarinin isimleri ve sayisi */
-const newListt = (eleman) => eleman.childrens[0];
+const newListt = (eleman) => eleman.childrens.fa;
 const genderListt = (element) => {
     if (element.gender === "girl")
         return genderListt
@@ -46,7 +46,8 @@ function getAge8UnderChildren(pFamilies) {
 }
 /** soru 4 :yasi sekizden buyuk cocuklarin sayisi  */
 
-const newAgeListt = (eleman) => eleman.childrens[0];
+const newAgeListt = (eleman) => eleman.childrens;
+
 const ageListt = (element) => {
     if (element.age > 8)
         return ageListt
@@ -56,6 +57,7 @@ function getAge8OverChildren(pFamilies) {
     const totalListe =
         pFamilies
         .map(newAgeListt)
+        .map(newAge)
         .filter(ageList)
     return totalListe
 }

@@ -1,7 +1,7 @@
 /**
  * Yeni ögrenciyi listeye ekler ve toplam ögrenci sayisini yazdirir
  */
-function addStudent() {
+ function addStudent() {
     return `${createStudent()}
             <tr>
             <th>Total Student</th>
@@ -89,7 +89,7 @@ function deleteStudentfromUI() {
         if (event.target.className === "btn btn-danger delete") {
             list.filter((student, index) => {
                 if (event.target.id === `del-${index}`) {
-                    list.splice(index, 1);
+                    list.splice(student, 1);
                     listElement.innerHTML = createStudentListSection();
                 }
             })
